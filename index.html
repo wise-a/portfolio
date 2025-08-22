@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Use Tailwind CSS for modern, responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use the Inter font for a clean look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Use Lucide for icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /*
+        * User's provided CSS for the "glassy, sleek, modern, fluid" design.
+        * This section was added to style the website.
+        */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            /* Using a subtle background gradient for the glassy effect */
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.8));
+            color: #333;
+            transition: background 0.5s ease;
+        }
+
+        /* Container for a fluid layout with a blur effect */
+        .container-glass {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            /* This is the key for the glassy effect */
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Button with glassy effect */
+        .button {
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            color: #333;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .button:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.05);
+        }
+
+        /* Responsive design for mobile */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+                /* Smaller header on mobile */
+            }
+            .button {
+                width: 100%;
+                /* Full width button */
+                padding: 15px;
+            }
+        }
+
+        /* Applying the Inter font and overriding some default Tailwind styles for a consistent look */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="sticky top-0 z-50 bg-transparent py-4">
+        <!-- Replaced container with a custom glass container for consistent styling -->
+        <nav class="container-glass flex justify-between items-center px-6 py-2">
+            <a href="#hero" class="text-xl md:text-2xl font-bold text-gray-900 transition-colors hover:text-indigo-600">My Portfolio</a>
+            <div class="space-x-4 md:space-x-8 text-sm md:text-base">
+                <a href="#about" class="text-gray-600 hover:text-indigo-600 transition-colors">About</a>
+                <a href="#projects" class="text-gray-600 hover:text-indigo-600 transition-colors">Projects</a>
+                <a href="#contact" class="text-gray-600 hover:text-indigo-600 transition-colors">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="container mx-auto px-6 py-20 md:py-32 flex flex-col-reverse md:flex-row items-center justify-center gap-12">
+            <!-- Left content column -->
+            <div class="text-center md:text-left md:w-1/2">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-gray-900">
+                    Hi, I'm <span class="text-indigo-600">Jennifer Wise</span>
+                </h1>
+                <p class="mt-4 text-lg md:text-xl text-gray-600">
+                    A Passionate Web Developer & Designer from Somewhere, USA.
+                </p>
+                <div class="mt-8 flex flex-col md:flex-row justify-center md:justify-start space-y-4 md:space-y-0 md:space-x-4">
+                    <!-- Replaced Tailwind button classes with the new custom .button class -->
+                    <a href="#projects" class="button">View My Work</a>
+                    <a href="#contact" class="button">Get In Touch</a>
+                </div>
+            </div>
+            <!-- Right image column -->
+            <div class="md:w-1/2 flex justify-center">
+                <!-- Profile image -->
+                <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                    <img src="https://placehold.co/500x500/E0E7FF/4338CA?text=Jen" alt="Jennifer's profile picture" class="absolute inset-0 w-full h-full object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="container mx-auto px-6 py-16 md:py-24">
+            <!-- Added the custom container-glass class for the glassy effect -->
+            <div class="container-glass">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-6">About Me</h2>
+                <div class="prose max-w-none text-center text-gray-600">
+                    <p>
+                        I'm a full-stack developer with a passion for creating beautiful and functional web applications. My journey in tech started with a simple "Hello, World!" and has grown into a love for building scalable, user-centric solutions. I specialize in front-end frameworks like React and Vue, but I'm also comfortable on the back-end with Node.js and Python.
+                    </p>
+                    <p class="mt-4">
+                        When I'm not coding, you can find me hiking local trails, experimenting with new recipes, or learning to play the ukulele. I believe in continuous learning and enjoy tackling complex problems to deliver elegant solutions. I'm currently seeking new opportunities to collaborate on impactful projects.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="container mx-auto px-6 py-16 md:py-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">My Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden transform transition-transform hover:scale-105">
+                    <img src="https://placehold.co/600x400/D1D5DB/4B5563?text=Project+1" alt="Placeholder image for Project 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Portfolio Website</h3>
+                        <p class="text-gray-600 mb-4">A modern and responsive portfolio site built with HTML and Tailwind CSS.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">HTML</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">CSS</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Tailwind</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden transform transition-transform hover:scale-105">
+                    <img src="https://placehold.co/600x400/D1D5DB/4B5563?text=Project+2" alt="Placeholder image for Project 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">E-commerce App</h3>
+                        <p class="text-gray-600 mb-4">A full-stack e-commerce application with user authentication and payment integration.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">React</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Node.js</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden transform transition-transform hover:scale-105">
+                    <img src="https://placehold.co/600x400/D1D5DB/4B5563?text=Project+3" alt="Placeholder image for Project 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Task Management Tool</h3>
+                        <p class="text-gray-600 mb-4">A simple and intuitive tool to help teams manage their daily tasks efficiently.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Vue.js</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Firebase</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Sass</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="container mx-auto px-6 py-16 md:py-24">
+            <!-- Added the custom container-glass class for the glassy effect -->
+            <div class="container-glass text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto mb-8">
+                    I'm always open to new opportunities and collaborations. Feel free to reach out!
+                </p>
+                <div class="flex justify-center space-x-6">
+                    <a href="mailto:jwisejenny@gmail.com" class="text-gray-600 hover:text-indigo-600 transition-colors">
+                        <div class="flex items-center space-x-2">
+                            <i data-lucide="mail" class="w-6 h-6"></i>
+                            <span class="hidden md:inline">Email</span>
+                        </div>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="text-gray-600 hover:text-indigo-600 transition-colors">
+                        <div class="flex items-center space-x-2">
+                            <i data-lucide="linkedin" class="w-6 h-6"></i>
+                            <span class="hidden md:inline">LinkedIn</span>
+                        </div>
+                    </a>
+                    <a href="https://github.com" target="_blank" class="text-gray-600 hover:text-indigo-600 transition-colors">
+                        <div class="flex items-center space-x-2">
+                            <i data-lucide="github" class="w-6 h-6"></i>
+                            <span class="hidden md:inline">GitHub</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 mt-12 bg-transparent">
+        <div class="container-glass text-center px-6">
+            <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
